@@ -24,14 +24,15 @@ SORACOM Beam はIoT デバイスにかかる暗号化等の高負荷処理や接
 
 SORACOM Beamの設定をします。
 
-- 設定名: 任意の名前。**右のスライダーを「ON」にする**
+- 設定名: 任意の名前
 - 転送先: プロトコルを「https」、ホスト名を「84szdth0th.execute-api.ap-northeast-1.amazonaws.com」、パスを「/test/items/」にする
 - ヘッダ操作: IMSIヘッダ、IMEIヘッダをONにする
 
 ![beam-setting.png](https://docs.google.com/drawings/d/e/2PACX-1vQXhaVHHeq8_z8CMaZk1OZQdvpr_lQvIz66PpJeEiJgw3icGSU6YGluDIfe79h0TgZROUOM6UQWFXih/pub?w=460&h=714)
 
 * ヘッダ操作: 署名ヘッダ付与を「ON」にします
-* 事前共有鍵：[＋]を押し、事前供給鍵を作成します。認証情報IDは任意の文字列、概要は空欄、事前共有鍵を「XXXX」(当日スタッフから入手してください)を設定し、「保存」を押します。作成後、今作った事前共有鍵の認証情報IDを選択してください。
+* 事前共有鍵：[＋]を押し、事前供給鍵を作成します。認証情報IDは任意の文字列、概要は空欄、事前共有鍵を「XXXX」(**ハンズオン当日にスタッフから入手してください**)と設定し、「保存」を押します。
+  作成後、作った事前共有鍵の認証情報IDがプルダウンに現れるので、それを選択してください。
 
 ![psk.png](https://docs.google.com/drawings/d/e/2PACX-1vRhHTp07U28s6n438o_eNRTQtPiCnmxnENot51Tcvw0XIbNUuTVGhlAKjfmFsNARJD6kfcgYAOJif98/pub?w=874&h=834)
 
