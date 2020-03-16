@@ -108,6 +108,6 @@ SORACOM Harvest Data 、 SORACOM Lagoon 等、 SORACOM サービス利用の費�
 * [SORACOM Beam 料金](https://soracom.jp/services/beam/price/){:target="_blank"}
     * 1リクエストあたり0.0009 円
         (Beamへのリクエスト、Beamから転送先へのリクエストそれぞれを個別に1リクエストとカウント) 
-    * 1アカウントあたり月間100,000リクエストまでは無料
+    * 1アカウントあたり月間100,000リクエストまでの無料枠があります
 
 ※ 料金は全て送料や税抜きです。
