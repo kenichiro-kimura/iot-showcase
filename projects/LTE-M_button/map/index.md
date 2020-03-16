@@ -33,6 +33,9 @@ SORACOM LTE-M Button for Enterprise (以下 SORACOM LTE-M Button) を使った�
 - 作業A: ボタンのクリックイベントを SORACOM Harvest Data を使って可視化
 - 作業B: 簡易位置情報をSORACOM BeamでクラウドサーバのAPIに送信し、地図上に表示します
   - 今回はAWSのAPI Gatewayに接続し、データをDynamoDBに保存します
+  - 地図は参加者全員で共有のため、他の参加者にもあなたのデータが表示されます。
+    簡易位置情報のためボタンを押した地点がピンポイントで表示されるわけではありませんが、プライバシーが気になる方はこの作業を飛ばして次の「作業C」にお進みください。
+  - 保存されたデータは最終更新時(ボタンを押した日時)から24時間で自動削除されますが、ハンズオン終了後の削除をご要望の方は運営までご相談ください。
 - 作業C: ボタンのクリックイベントを SORACOM Lagoon のアラート機能を利用して通知します
 
 ![button2beam2api.jpg](https://docs.google.com/drawings/d/e/2PACX-1vQWgPI-QhRNsgP_7DRaUiJsl6rQec6VW3auogQLT_7yryLuCXwUgiVoUAjwC2MD0ukeYPTKk1yyacG-/pub?w=965&h=204&x=2)
@@ -102,5 +105,9 @@ SORACOM Harvest Data 、 SORACOM Lagoon 等、 SORACOM サービス利用の費�
 * [簡易位置測位機能](https://dev.soracom.io/jp/docs/location_service/){:target="_blank"}
     * 1SIM/1ボタンあたり : 月額 50円（月間750リクエスト含む）
     * 750回を越したリクエストについては リクエストあたり : 0.15円　となります。
+* [SORACOM Beam 料金](https://soracom.jp/services/beam/price/){:target="_blank"}
+    * 1リクエストあたり0.0009 円
+        (Beamへのリクエスト、Beamから転送先へのリクエストそれぞれを個別に1リクエストとカウント) 
+    * 1アカウントあたり月間100,000リクエストまでは無料
 
 ※ 料金は全て送料や税抜きです。
