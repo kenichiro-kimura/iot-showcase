@@ -1,11 +1,11 @@
-# SORACOM LTE-M Button と SORACOM Lagoon で簡単IoTを実現
+# SORACOM LTE-M Button と SORACOM Beam ＆ Lagoonで簡単IoTを実現
 
 <!--
 Google Drive Images: https://drive.google.com/open?id=14yESi7Uem0lpooGA9_QXZ1CmxNT5xl9C
 -->
 
 SORACOM LTE-M Button for Enterprise (以下 SORACOM LTE-M Button) を使った自習形式ハンズオンです。  
-作業時間の目安は作業Ａで 15分、作業Ｂで20分となります。
+作業時間の目安は作業Ａで 15分、作業Ｂで15分、作業Cで20分となります。
 
 <h2 id="prepare">必要なもの</h2>
 
@@ -17,13 +17,11 @@ SORACOM LTE-M Button for Enterprise (以下 SORACOM LTE-M Button) を使った�
         * OS は不問ですが、できる限り最新の OS の利用を強く推奨します
         * プロキシー設定やアクセス制限などの社内システム設定がある場合は受講できない場合があります
 * SORACOM LTE-M Button for Enterprise / 1 個
-    * 会場によっては貸出いたします。また、すでにお持ちの場合は持ち込み可です
     * SORACOM LTE-M Button Plus でもお使いいただけます
 * 有効なクレジットカード / 1 つ
-    * SORACOM アカウントを作成いただくのに必要となります（すでに SORACOM アカウントをお持ちの方、もしくは、貸出の方は不要です）
-* 会場で確認可能なメールアドレス / 1 つ
-    * SORACOM アカウント作成時を行う際に必要となります（すでに SORACOM アカウントをお持ちの方、もしくは、貸出の方は不要です）
-    * SORACOM Lagoon の通知を受け取る際にも利用します
+    * SORACOM アカウントを作成いただくのに必要となります（すでに SORACOM アカウントをお持ちの方は不要です）
+* メールアドレス / 1 つ
+    * SORACOM アカウント作成時を行う際に必要となります（すでに SORACOM アカウントをお持ちの方は不要です）
 
 <h2 id="standby">作業前の準備</h2>
 
@@ -33,33 +31,41 @@ SORACOM LTE-M Button for Enterprise (以下 SORACOM LTE-M Button) を使った�
 <h2 id="overview">全体像</h2>
 
 - 作業A: ボタンのクリックイベントを SORACOM Harvest Data を使って可視化
-- 作業B: ボタンのクリックイベントを SORACOM Lagoon のアラート機能を利用して通知します
+- 作業B: 簡易位置情報をSORACOM BeamでクラウドサーバのAPIに送信し、地図上に表示します
+  - 今回はAWSのAPI Gatewayに接続し、データをDynamoDBに保存します
+- 作業C: ボタンのクリックイベントを SORACOM Lagoon のアラート機能を利用して通知します
 
+![button2beam2api.jpg](https://docs.google.com/drawings/d/e/2PACX-1vQWgPI-QhRNsgP_7DRaUiJsl6rQec6VW3auogQLT_7yryLuCXwUgiVoUAjwC2MD0ukeYPTKk1yyacG-/pub?w=965&h=204&x=2)
 ![overview.png](https://docs.google.com/drawings/d/e/2PACX-1vS-3EnPq0oOCPQgcPK4CDXHGYX76iE_TGR8fqo3zxbMSdiqobdpuDyZgbAsXUfBEdoCkO654KqtKSNF/pub?w=744&h=213)
+
+
+
+
+
+
 
 <h2 id="workflow">進め方</h2>
 
-作業A → 作業B の順番で実施してください
+作業A → 作業B → 作業C の順番で実施してください
 
 <h2 id="work-a">作業A: SORACOM Harvest Data を使ったボタンの動作確認</h2>
 
 1. [SORACOM ユーザコンソール](https://console.soracom.io){:target="_blank"} で SORACOM LTE-M Button for Enterprise を 受け取る  
-   **貸し出されたボタンを利用する場合には必要ありません**
+   
 2. [ボタンのクリックイベントを SORACOM Harvest Data で確認する](../common/harvest){:target="_blank"}
 
-<h2 id="work-b">作業B: SORACOM Lagoon のアラート機能を利用して通知を送る</h2>
+<h2 id="work-b">作業B: SORACOM Beamを使ってクラウドのAPIに位置情報データを送る</h2>
 
-1. [ SORACOM Lagoon の設定を行う ](work-b/soracom){:target="_blank"}
+1. [ SORACOM Beam の設定を行う ](work-b/index.md){:target="_blank"}
+2. [確認ページで参加者の位置情報を確認する](http://soracom-map-20200307111440-hostingbucket-test.s3-website-ap-northeast-1.amazonaws.com/){:target="_blank"}
+
+<h2 id="work-c">作業C: SORACOM Lagoon のアラート機能を利用して通知を送る</h2>
+
+1. [ SORACOM Lagoon の設定を行う ](work-c/index.md){:target="_blank"}
+
+
 
 <h2 id="closing">作業: あとかたづけ</h2>
-
-<h3 id="cleanup-button-rent">ボタンを借りた方</h3>
-
-#### ボタンの片付け
-
-SORACO LTE-M Button は運営にお返しください。
-
-<h3 id="cleanup-button-self">ボタンを持ち込まれた方</h3>
 
 後述の [料金について](#fee) をご確認の上、不要な SORACOM リソースを削除してください。
 
@@ -73,6 +79,8 @@ SORACO LTE-M Button は運営にお返しください。
     * 終了時のダイアログに記載されている通り、すべての Lagoon ユーザー、ダッシュボード、アラートが削除されます（SORACOM Harvest Data のデータは削除されません）
 * SORACOM Harvest Data のデータ削除 （必要に応じて）
     * データを表示した後、対象データのチェックボックスを付けて [削除] をします
+* DynamoDBの位置情報データ削除
+    * データは24時間で自動的に削除されますが、お急ぎの方は運営までご相談ください
 
 <h3 id="fee">料金について</h3>
 
