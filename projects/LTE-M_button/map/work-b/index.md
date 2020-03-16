@@ -32,12 +32,15 @@ SORACOM Beamの設定をします。
 
 * ヘッダ操作: 署名ヘッダ付与を「ON」にします
 * 事前共有鍵：[＋]を押し、事前供給鍵を作成します。認証情報IDは任意の文字列、概要は空欄、事前共有鍵を「XXXX」(**ハンズオン当日にスタッフから入手してください**)と設定し、「保存」を押します。
+  
   作成後、作った事前共有鍵の認証情報IDがプルダウンに現れるので、それを選択してください。
 
 ![psk.png](https://docs.google.com/drawings/d/e/2PACX-1vRhHTp07U28s6n438o_eNRTQtPiCnmxnENot51Tcvw0XIbNUuTVGhlAKjfmFsNARJD6kfcgYAOJif98/pub?w=874&h=834)
 
 * カスタムヘッダ: [＋]を押し、カスタムヘッダを追加します。アクションは「追加」、ヘッダ名は「x-soracom-button-name」、値はあなたのお名前など分かりやすい文字を入力してください。これがハンズオン結果画面の地図と一覧に表示されます。
+  
   英数字以外を入力される場合は[こちらのページ](https://tech-unlimited.com/urlencode.html)を利用してURLエンコードした値を入力してください。
+  
   入力が終わったら「作成」を押します。
 
 ![custom-header.png](https://docs.google.com/drawings/d/e/2PACX-1vQY_6S_Cyq-6fLnYXrZnLUksqNYQDZJmxSHcpJKNI1E6WPrrAGKiQGlFoV9ip6RGo-kfit4JwkNJcex/pub?w=614&h=758)
@@ -49,6 +52,7 @@ SORACOM Beamの設定をします。
 <h2>ボタンを押してデータを確認する</h2>
 
 設定が完了したら、ボタンを押してみましょう(single/double/longいずれでも結構です)。
+
 
 設定が正しく行われていれば、[こちらの確認画面](http://soracom-map-20200307111440-hostingbucket-test.s3-website-ap-northeast-1.amazonaws.com/)にあなたのお名前(x-soracom-button-nameで設定した値)と簡易位置情報で取得した位置情報、取得日時が一覧に表示され、さらに地図上にピンが表示されます。
 
