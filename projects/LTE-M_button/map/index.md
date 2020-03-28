@@ -56,7 +56,7 @@ SORACOM LTE-M Button for Enterprise (以下 SORACOM LTE-M Button) を使った�
 
 1. [SORACOM ユーザコンソール](https://console.soracom.io){:target="_blank"} で SORACOM LTE-M Button for Enterprise を 受け取る  
    
-2. [ボタンのクリックイベントを SORACOM Harvest Data で確認する](../common/harvest){:target="_blank"}
+2. [ボタンのクリックイベントを SORACOM Harvest Data で確認する](../common/harvest.md){:target="_blank"}
 
 <h2 id="work-b">作業B: SORACOM Beamを使ってクラウドのAPIに位置情報データを送る</h2>
 
